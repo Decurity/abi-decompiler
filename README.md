@@ -114,6 +114,7 @@ $ python abi-decompiler.py -f /root/blockchain/contract.bin -w ./solnames1.txt -
 0x00000016	81	DUP2
 0x00000017	1	ADD
 0x00000018	90	SWAP1
+. . .
 ```
 
 ## Known bugs
@@ -123,3 +124,10 @@ This tool was meant to keep very simple, that's why there's no fancy clever math
 This means that this dirty tool lacks some features and cannot accurately calculate some features (types of return value, payable modifier).
 
 I will try to solve this challenge and make it work without huge dependencies =)
+
+## TODO
+
+- Fix wrong payable modifier calculation
+- Implement return value detection
+- Add inline assembly to the interface to generate ready-to-use source code for debugging 
+- Add stack details to disassembly
