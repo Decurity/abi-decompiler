@@ -1,1 +1,1 @@
-sha3
+pysha3
