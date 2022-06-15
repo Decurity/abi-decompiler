@@ -17,7 +17,6 @@ clang++ -O3 -std=c++11 -pthread sha3.c sig-bruteforcer.cpp -o sig-bruteforcer
 ```
 
 ### Usage
-
 Arguments:
 ```
 ./sig-bruteforcer <Hex-encoded function selector> <Path to the function names> <Num of threads> <Max num of function arguments>
@@ -27,14 +26,17 @@ Example:
 ```
  % ./sig-bruteforcer 2e1a7d4d solnames.txt 4 5
 Started thread from: 0
-Started thread from: 431
-Started thread from: 862
-Started thread from: 1293
-Started thread from: 1724
+Started thread from: 432
+Started thread from: 864
+Started thread from: 1296
 FOUND => withdraw(uint256)
 ```
 
-## Usage
+### TODO
+Implement a generalized brute force for different data types and sizes and the arrays.
+
+
+## [DEPRECATED] Usage
 
 Arguments:
 ```
