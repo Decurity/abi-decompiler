@@ -7,6 +7,33 @@ The tool is written in Python2 and is equipped with several wordlists for functi
 Wordlists are compiled from real smart contracts and top 100k english words.
 Also a signature database was imported from https://github.com/trailofbits/ethersplay.
 
+## UPDATE 06/2022
+The old Python version is very slow and buggy. Please see the limited C++ version that is only capable of multi-threaded signature brute force.
+
+### Compilation
+
+```
+clang++ -O3 -std=c++11 -pthread sha3.c sig-bruteforcer.cpp -o sig-bruteforcer
+```
+
+### Usage
+
+Arguments:
+```
+./sig-bruteforcer <Hex-encoded function selector> <Path to the function names> <Num of threads> <Max num of function arguments>
+```
+
+Example:
+```
+ % ./sig-bruteforcer 2e1a7d4d solnames.txt 4 5
+Started thread from: 0
+Started thread from: 431
+Started thread from: 862
+Started thread from: 1293
+Started thread from: 1724
+FOUND => withdraw(uint256)
+```
+
 ## Usage
 
 Arguments:
