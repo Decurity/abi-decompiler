@@ -129,7 +129,7 @@ int main(int argc, char *argv[]) {
         dict.push_back(line);
     }
 
-    int chunk_size = dict.size() / THREADS_NUM;
+    int chunk_size = (dict.size() + THREADS_NUM) / THREADS_NUM;
 
     for(int i = 0; i < dict.size(); i += chunk_size) {
         threads.push_back(std::thread(doit, i, std::max(i + chunk_size, (int) dict.size()), sig));
